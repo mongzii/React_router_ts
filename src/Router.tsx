@@ -5,10 +5,7 @@ import About from "./screens/About";
 import Root from "./Root"
 import NotFound from "./screens/NotFound";
 import User from "./screens/users/User";
-
-
-
-
+import Followers from "./screens/users/Followers";
 
 
 // function Router(){
@@ -38,6 +35,12 @@ const router = createBrowserRouter([
             {
                 path:"users/:userId",
                 element: <User />,
+                children: [
+                    {
+                        path:"followers",
+                        element: <Followers />
+                    }
+                ]
             }
         ],
         errorElement: <NotFound />
